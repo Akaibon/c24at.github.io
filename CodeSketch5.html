@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>everything you need to know</title>
+	<title>Blue Jay Flying</title>
 
 	<style type="text/css">
+
+		body{
+			margin:0px;
+			background-image: url(https://wallpaperaccess.com/full/338765.jpg); ;
+			background-position:center;
+			background-repeat:no-repeat;
+		}
 		
 		.square{
-			width:200px;
+			position:relative;
+			display:inline-block;
+			width:250px;
 			height:200px;
-			background-color: lightblue;
 			margin:10px;
 			background-image:url(bluejays.png);
+			background-position: center;
+			background-repeat: no-repeat;
 		}
-
+ 
 
 	</style>
 
@@ -23,14 +33,47 @@
 
 
 
-<div class=square></div>
-<div class=square></div>
-<div class=square></div>
-<div class=square></div>
-<div class=square></div>
-<div class=square></div>
-<div class=square></div>
-<div class=square></div>
+
+
+<div id="alfred"class=square></div>
+
+	<script type="text/javascript">
+	
+		var bird = document.getElementById("alfred")
+
+		document.addEventListener("click",
+			function (event){
+
+			console.log(event.clientX, event.clientY);
+			bird.style.left= event.clientX-130+"px";
+			bird.style.top= event.clientY-130+"px";
+
+			
+
+		})
+
+
+
+
+		var button = document.getElementById("alfred");  
+
+	document.addEventListener("click", myPlay); 
+
+	function myPlay(){
+    var audio = new Audio("bluejaycrys.wav");
+    audio.play();
+
+
+
+} ;
+
+
+
+
+	</script>
+
+	
+
 
 
 </body>
