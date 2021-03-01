@@ -35,7 +35,7 @@
 
 
 
-<div id="alfred"class=square></div>
+<div id="alfred"class=square style="left:0%; top:0%;"></div>
 
 	<script type="text/javascript">
 	
@@ -45,8 +45,30 @@
 			function (event){
 
 			console.log(event.clientX, event.clientY);
-			bird.style.left= event.clientX-130+"px";
+
+			
+
+			var x = parseInt(bird.style.left);
+
+
+			if(event.clientX>x)
+			{
+				console.log(x);
+				bird.style.transform = "rotate(120deg)";
+				bird.style.left= event.clientX-130+"px";
 			bird.style.top= event.clientY-130+"px";
+			}
+
+			if 
+				(event.clientX<x)
+			{
+				bird.style.transform = "rotate(-30deg)";
+				console.log(x);
+				bird.style.left= event.clientX-130+"px";
+			bird.style.top= event.clientY-130+"px";
+			}
+			
+
 
 			
 
